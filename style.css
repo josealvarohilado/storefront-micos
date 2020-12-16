@@ -1,0 +1,323 @@
+/* 
+Theme Name: Micos Child Theme 
+Version: 6.0.0 
+Description: Micos Child theme for Woo. 
+Author: Micos
+Author URI: http://micostore.com.au
+Template: storefront
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400&display=swap');
+
+/*
+Main brand color - #df2226
+Main brand contrast color - #ffe626
+Main background - #ffffff
+Light shade - #f7f7f5
+Light accent - #baabb5
+Dark accent - #9c8991
+Dark shade - #5c4f59
+
+*/
+
+/* 
+ * The Next Jump Modifications 
+ * CSS Clean-up
+ * JAJH 12/05/2020
+*/
+
+/* Change primary menu background color*/
+.storefront-primary-navigation, .main-navigation ul.menu ul.sub-menu, .main-navigation ul li a {
+background-color:#df2226;
+color:#ffffff;
+font-family: "Fresh Sans Medium",Helvetica,Arial,sans-serif;
+font-weight: 500;
+
+}
+.main-navigation ul li a:hover, .main-navigation ul li:hover > a, .site-title a:hover, .site-header ul.menu li.current-menu-item > a {
+color: #ffe626;
+background-color: darken;
+}
+
+/*background color for Mega Menu */
+.smm-mega-menu {
+	background-color: #f7f7f5 !important;
+}
+
+/*Mega Menu header style */
+.main-navigation ul li.smm-active .widget h3.widget-title {
+font-weight:600 !important;
+color: #5c4f59 !important;
+font-family: 'Yantramanav', "Helvetica Neue", 'Helvetica','Arial', sans-serif;
+}
+
+/* Primary menu span whole width of viewport */
+.col-full {
+max-width: 122.2em;
+}
+
+
+/*Yellow highlight for Featured Items in menu*/
+#menu-item-68 a {
+background-color:#ffe626;
+border-radius:0px;
+color:#df2226;
+}
+
+/* Masthead menu */
+.storefront-primary-navigation a, .cart-contents a ul {
+	margin:0 0 0 0;
+	padding: 5px 5px 5px 5px !important;
+}
+
+.site-header-cart .cart-contents a span ul li {
+	color:#ffffff !important;
+}
+
+.main-navigation ul {
+	padding:0px 0px 0px 0px!important; 
+}
+
+a.cart-contents, .site-header-cart .widget_shopping_cart a, .site-header-cart > li > a {
+color: #404040;
+}
+
+.site-header-cart, .site-header-cart > li > a {
+	color: #fff !important;
+}
+.site-header-cart:focus, .site-header-cart:focus > li > a {
+	color: #fff !important;
+}
+
+/* Side cart hover */
+.site-header-cart:hover > li > a {
+	color: #ffe626 !important;
+	
+}
+
+/* Mini cart items hover */
+a.cart-contents:hover  {
+color: #ffe626 !important;
+}
+/* Mini cart items hover */
+.widget_shopping_cart a {
+	color:#5c4f59 !important;
+}
+.widget_shopping_cart a:hover {
+	color:#000000 !important;
+}
+
+@media screen and (min-width: 768px){
+	/* Masthead */
+	#masthead.site-header {
+		height: 115px !important;
+		margin-bottom:0em !important;
+		padding-bottom: 0;
+	}
+}
+
+/* Mobile CSS for Masthead */
+@media only screen and (max-width: 767px) {
+	#masthead.site-header {
+	height: 90px!important;
+	margin-bottom:0px;
+	}
+
+	/* Mobile CSS for Header area */ 
+	.site-header {
+	padding-top:0.5em;
+	background-color:#ffffff;
+	}
+
+	.storefront-primary-navigation, .main-navigation ul.menu ul.sub-menu, .main-navigation ul li a {
+		background-color:#ffffff;
+	}
+}
+
+/*
+ * The Next Jump Modifications 
+ * JAJH 12/05/2020 
+*/
+
+.woocommerce-active .site-header .main-navigation {
+	width: 100%;
+}
+
+/* Header area */
+.site-header {
+	padding-top:0.5em;
+	}
+	
+	.site-branding {
+	margin-bottom: 1.71575em;
+	}
+
+/* To remove gray border in site header */
+.site-header {
+	border: 0;
+}
+
+/* Set logo image */
+.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+	margin-bottom: 0px; 
+	max-width:100%;
+	float: none !important; 
+	}
+
+/* Set logo container size */
+.custom-logo-link{
+	max-width: 150px;
+}
+
+/* Makes site-header-cart smaller to make room for search */
+.woocommerce-active .site-header .site-header-cart {
+	width :25px;
+	height: 35px;
+	float: right;
+	margin-top: 1.2em;
+}
+
+/* Have to position shopping cart as a result of making the site-header-cart smaller */
+.site-header-cart .widget_shopping_cart {
+	right: 0em;
+	top: 100%;
+	width: 300px;
+}
+
+/* Moving the shopping cart to the left on hover */
+.site-header-cart.focus .widget_shopping_cart, .site-header-cart:hover .widget_shopping_cart {
+	left: auto;
+}
+
+/* Shopping cart icon moved to :before */
+.site-header .site-header-cart .cart-contents:after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:Font Awesome\ 5 Free;
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f290";
+	font-size: 25px;
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+}
+
+/* Shopping cart count style */
+.site-header .site-header-cart .count {
+	display: block;
+	height: 1.387em;
+	width: 1.387em;
+	line-height: 1.387;
+	text-align: center;
+	position: absolute;
+	top: 0em;
+	right: -1.36em;
+	z-index: 999;
+	border-radius: 100%;
+	border: 2px solid #fff;
+	box-sizing: content-box;
+	opacity: 1;
+	color: #fff;
+	/* background-color: #EE6948; */
+	background-color: #df2226;
+	border-radius: 50%;
+	font-weight: 800; }
+
+/* Amount positioning */
+.site-header-cart .cart-contents .amount{
+	float: right;
+	display: none;
+}
+
+.site-header-cart .cart-contents{
+	padding: 0;
+}
+
+/* site-search to show on click */
+.site-header .site-search input[type=search] {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: 250px;
+	margin-right: .618em;
+	padding: .5em;
+	-webkit-transform: translateX(1.618em);
+	-moz-transform: translateX(1.618em);
+	-ms-transform: translateX(1.618em);
+	-o-transform: translateX(1.618em);
+	transform: translateX(1.618em);
+	-webkit-transition: all, cubic-bezier(0.795, -0.035, 0, 1), 0.5s;
+	-moz-transition: all, cubic-bezier(0.795, -0.035, 0, 1), 0.5s;
+	transition: all, cubic-bezier(0.795, -0.035, 0, 1), 0.5s;
+	opacity: 0;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+	visibility: hidden;
+	border: 2px solid transparent;
+	z-index: 999; }
+	
+.site-header .site-search.active input[type=search] {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+	visibility: visible; }
+
+.site-header .site-search .widget_product_search form:before {
+	display: none; }
+	
+.site-header .site-search .widget_product_search form label {
+	clip: auto;
+	position: static !important;
+	display: block;
+	width: 100%;
+	height: 2.618em;
+	text-indent: -9999px; }
+	
+.site-search .widget_product_search form input[type="search"], .site-search .widget_product_search form input[type="text"] {
+	padding-left: 10px;
+}
+
+.site-header .site-search .widget_product_search form label:hover, .site-header .site-search .widget_product_search form label:active, .site-header .site-search .widget_product_search form label:focus {
+	background-color: transparent;
+	padding: 0;
+	box-shadow: none;
+	border-radius: 0;
+	line-height: 1.618;
+	cursor: pointer; }
+		
+.site-header .site-search .widget_product_search form label:before {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: "\f002";
+	font-style: normal;
+	font-variant: normal;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	line-height: 1.618;
+	text-align: center;
+	text-indent: 0;
+	font-size: 1.618em; }
+
+.woocommerce-active .site-header .site-search {
+	width: auto;
+	position: absolute;
+	top: 2.3em;
+	right: 7em;
+}
+
+.site-header .site-search .widget_product_search form label {
+	clip-path: none;
+	-webkit-clip-path: unset; }
