@@ -2,7 +2,7 @@
 /**
  * Micos template functions.
  *
- * @package micos
+ * @package Micos
  */
 
 /**
@@ -10,31 +10,48 @@
  * JAJH 12/05/2020
  */
 
- if ( ! function_exists( 'storefront_header_cart' ) ) {
+ if ( ! function_exists( 'storefront_myaccount_link' ) ) {
 	/**
-	 * Display Header Cart
+	 * My Account Link
+	 * Displayed a link to the My Account page
 	 *
-	 * @since  1.0.0
-	 * @uses  storefront_is_woocommerce_activated() check if WooCommerce is activated
 	 * @return void
+	 * @since  1.0.0
 	 */
-	function storefront_header_cart() {
-		if ( storefront_is_woocommerce_activated() ) {
-			if ( is_cart() ) {
-				$class = 'current-menu-item';
-			} else {
-				$class = '';
-			}
-			?>
-		<ul id="site-header-cart" class="site-header-cart menu">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php storefront_cart_link(); ?>
-			</li>
-			<li>
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-			</li>
-		</ul>
-			<?php
-		}
+	function storefront_myaccount_link() {
+		?>
+			<div class="set-inline">
+				<a class="my-account" href="<?php echo esc_url( get_permalink( get_theme_mod('my_account_page')) ); ?>" title="<?php esc_attr_e( 'View your account', 'storefront' ); ?>">
+				</a>
+			</div>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'storefront_icons_start' ) ) {
+	/**
+	 * Start tag for Search, My Account and Cart icons container
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	function storefront_icons_start() {
+		?>
+			<div class="header-icons-container">
+		<?php
+	}
+}
+
+if ( ! function_exists( 'storefront_icons_end' ) ) {
+	/**
+	 * End tag for Search, My Account and Cart icons container
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	function storefront_icons_end() {
+		?>
+			</div>
+		<?php
 	}
 }

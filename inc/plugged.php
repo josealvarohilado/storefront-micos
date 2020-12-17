@@ -16,6 +16,36 @@
  * JAJH 12/05/2020
  */
 
+ if ( ! function_exists( 'storefront_header_cart' ) ) {
+	/**
+	 * Display Header Cart
+	 * Micos customization: Added set-inline class
+	 *
+	 * @since  1.0.0
+	 * @uses  storefront_is_woocommerce_activated() check if WooCommerce is activated
+	 * @return void
+	 */
+	function storefront_header_cart() {
+		if ( storefront_is_woocommerce_activated() ) {
+			if ( is_cart() ) {
+				$class = 'current-menu-item';
+			} else {
+				$class = '';
+			}
+			?>
+		<ul id="site-header-cart" class="site-header-cart menu set-inline">
+			<li class="<?php echo esc_attr( $class ); ?>">
+				<?php storefront_cart_link(); ?>
+			</li>
+			<li>
+				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+			</li>
+		</ul>
+			<?php
+		}
+	}
+}
+
 if ( ! function_exists( 'storefront_cart_link' ) ) {
 	/**
 	 * Cart Link
@@ -35,5 +65,41 @@ if ( ! function_exists( 'storefront_cart_link' ) ) {
 				<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count()); ?></span>
 			</a>
 		<?php
+	}
+}
+
+if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
+	/**
+	 * Display the site title or logo
+	 * Micos customization: Added tagline description below logo
+	 *
+	 * @since 2.1.0
+	 * @param bool $echo Echo the string or return it.
+	 * @return string
+	 */
+	function storefront_site_title_or_logo( $echo = true ) {
+		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+			$logo = get_custom_logo();
+			$html = is_home() ? '<h1 class="logo">' . $logo . '</h1>' : $logo;
+
+			/** Added Tagline Description under logo icon */
+			if ( '' !== get_bloginfo( 'description' ) ) {
+				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
+			}
+		} else {
+			$tag = is_home() ? 'h1' : 'div';
+
+			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) . '>';
+
+			if ( '' !== get_bloginfo( 'description' ) ) {
+				$html .= '<p class="site-description">' . esc_html( get_bloginfo( 'description', 'display' ) ) . '</p>';
+			}
+		}
+
+		if ( ! $echo ) {
+			return $html;
+		}
+
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

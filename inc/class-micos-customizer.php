@@ -27,9 +27,7 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 			global $storefront_version;
 
 			add_action( 'wp_enqueue_scripts',                  array( $this, 'customizer_css' ), 999 );
-			// add_action( 'customize_register',                  array( $this, 'edit_settings' ),      99 );
 			add_filter( 'storefront_setting_default_values',   array( $this, 'micos_defaults' ) );
-			// add_filter( 'storefront_default_background_color', array( $this, 'default_background_color' ) );
 		}
 
 		/**
@@ -52,6 +50,7 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 		 */
 		public function customizer_css() {
 			$header_link_color = get_theme_mod( 'storefront_header_link_color' );
+			$tagline_font_size = get_theme_mod('tagline_font_size');
 
             $style = '
             .site-header-cart, .site-header-cart > li > a {
@@ -67,9 +66,16 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
             a.cart-contents:hover  {
 				color: ' . $header_link_color . ' !important;
 			}
-			p.site-description, .site-header, .storefront-handheld-footer-bar {
+			.site-header .site-search .widget_product_search form label:before {
 				color: ' . $header_link_color . ' !important;
-			}';
+			}
+			.site-header .header-icons-container .my-account:after {
+				color: ' . $header_link_color . ' !important;
+			}
+			p.site-description{
+				font-size: ' . $tagline_font_size . 'px !important;
+			}
+			';
 
 			wp_add_inline_style( 'storefront-child-style', $style );
 		}

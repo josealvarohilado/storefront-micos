@@ -26,7 +26,10 @@ function micos_hooks() {
     remove_action( 'storefront_header', 'storefront_header_cart', 60 );
 
 	// Add cart and search with different priority
-	add_action( 'storefront_header', 'storefront_product_search', 39 );
-	add_action( 'storefront_header', 'storefront_header_cart', 40 );
+	add_action( 'storefront_header', 'storefront_icons_start', 36);
+	add_action( 'storefront_header', 'storefront_product_search', 37);
+	add_action( 'storefront_header', 'storefront_myaccount_link', 38);
+	add_action( 'storefront_header', 'storefront_header_cart', 39);
+	add_action( 'storefront_header', 'storefront_icons_end', 40);
 
 }
