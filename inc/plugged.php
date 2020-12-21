@@ -103,3 +103,28 @@ if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
+
+if ( ! function_exists( 'storefront_credit' ) ) {
+	/**
+	 * Display the theme credit
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function storefront_credit() {
+		$footer_text = get_theme_mod('credits_text');
+		?>
+		<div class="site-info">
+			<div class="footer-credits">
+				&copy; Copyright <?php echo get_bloginfo('name') . '. ' . $footer_text;?>
+			</div>
+			<!-- <?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . gmdate( 'Y' ) ) ); ?>
+
+			<?php if ( ! empty( $links_output ) ) { ?>
+				<br />
+				<?php echo wp_kses_post( $links_output ); ?>
+			<?php } ?> -->
+		</div><!-- .site-info -->
+		<?php
+	}
+}

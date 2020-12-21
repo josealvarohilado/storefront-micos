@@ -32,4 +32,7 @@ function micos_hooks() {
 	add_action( 'storefront_header', 'storefront_header_cart', 39);
 	add_action( 'storefront_header', 'storefront_icons_end', 40);
 
+	// Add footer socials widget
+	add_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
+
 }
