@@ -53,6 +53,7 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 			$tagline_font_size = get_theme_mod('tagline_font_size');
 			$header_logo_size = get_theme_mod('header_logo_size');
 			$social_media_color = get_theme_mod('social_media_color');
+			$heading_color = get_theme_mod( 'storefront_heading_color' );
 
             $style = '
             .site-header-cart, .site-header-cart > li > a {

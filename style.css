@@ -509,6 +509,81 @@ p.site-description {
 	background-color: #fff !important;
 }
 
+/* Contact Us Form*/
+.contact-us-form .wpforms-head-container .wpforms-title {
+	all: unset;
+	all: initial;
+  }
+
+.phone-enquiries-container .phone-enquiries-header-container h2 {
+	all: unset;
+	all: initial;
+}
+
+.phone-enquiries-container .phone-enquiries-header-container h2 {
+	font-family: inherit;
+	color: inherit;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.contact-us-form .wpforms-head-container .wpforms-title {
+	font-size: 2em !important;
+	font-weight: 300 !important;
+	font-family: inherit;
+	color: inherit !important;
+}
+
+.contact-us-form .wpforms-field-container{
+	width: 70% !important;
+}
+
+.contact-us-form .wpforms-head-container {
+	border-bottom: 5px solid green!important;
+	margin-bottom: 30px !important
+}
+
+.contact-us-form .wpforms-submit-container .contact-us-send {
+    border-radius: 30px !important;
+    padding: 10px 40px !important;
+    background-color: green !important;
+    color: white !important;
+}
+
+.contact-us-message textarea{
+	resize: none !important;
+}
+
+/* Phone enquiries section */
+.phone-enquiries-container .phone-enquiries-header-container {
+    border-bottom: 5px solid green;
+    margin-bottom: 20px;
+}
+
+.phone-enquiries-container .service-hours-table td {
+	padding: 0 !important;
+	width: 50%;
+}
+
+.phone-enquiries-container .wp-block-table table {
+	margin-bottom: 0;
+	width: 50%;
+}
+
+.phone-enquiries-container .service-hours-states{
+	margin-bottom: 0.5em;
+}
+
+.phone-enquiries-container .contact-us-description{
+	margin: 0 0 10px 0 !important;
+}
+
+@media screen and (max-width: 450px){
+	.contact-us-form .wpforms-field-container{
+		width: 100% !important;
+	}
+}
+
 @media screen and (min-width: 768px){
 	/* Masthead */
 	#masthead.site-header {
@@ -523,6 +598,7 @@ p.site-description {
 
 	.storefront-breadcrumb{
 		padding: 2.41575em 0;
+		margin: 0;
 	}
 }
 
@@ -561,11 +637,31 @@ p.site-description {
 	.header-icons-container {
 		display: none;
 	}
+
+	.phone-enquiries-container .wp-block-table table {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.contact-us-container{
+		display:block !important;
+	}
 }
 
 @media (max-width:66.4989378333em) {
 	/* Remove spacing before navigation row */
 	.storefront-primary-navigation .col-full {
 	margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 1155px){
+	.phone-enquiries-container .wp-block-table table {
+		width: 70%;
+	}
+
+	.contact-us-form .wpforms-field-container{
+		width: 100% !important;
 	}
 }
