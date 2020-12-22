@@ -106,24 +106,34 @@ if ( ! function_exists( 'storefront_site_title_or_logo' ) ) {
 
 if ( ! function_exists( 'storefront_credit' ) ) {
 	/**
-	 * Display the theme credit
+	 * Display the micos theme credit
 	 *
 	 * @since  1.0.0
 	 * @return void
 	 */
 	function storefront_credit() {
-		$footer_text = get_theme_mod('credits_text');
 		?>
 		<div class="site-info">
 			<div class="footer-credits">
-				&copy; Copyright <?php echo get_bloginfo('name') . '. ' . $footer_text;?>
-			</div>
-			<!-- <?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . gmdate( 'Y' ) ) ); ?>
+				<?php
+					$credit_text = get_theme_mod('footer_credit_text');
+					$credit_text = (isset($credit_text)) ? "<div class='footer-credit-text'>" . esc_attr($credit_text) . " </div> " : "";
 
-			<?php if ( ! empty( $links_output ) ) { ?>
-				<br />
-				<?php echo wp_kses_post( $links_output ); ?>
-			<?php } ?> -->
+					$menu_name = 'footer-credits-menu';
+					if ( ($menu = get_nav_menu_locations()) && isset($menu[$menu_name]) ){
+						$menu_object = wp_get_nav_menu_object($menu[$menu_name]);
+						$menu_items = wp_get_nav_menu_items($menu[$menu_name]);
+						
+						if (!empty($menu_items)){
+							$nav_link = '';
+							foreach($menu_items as $nav_item){
+								$nav_link = $nav_link . "| <a href='" . esc_url($nav_item->url) . "'>" . esc_attr($nav_item->title) . "</a> ";
+							}
+						}
+					}
+					echo str_replace('credit-links', $nav_link ,$credit_text);
+				?>
+			</div> <!-- .footer-credits -->
 		</div><!-- .site-info -->
 		<?php
 	}

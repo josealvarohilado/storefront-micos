@@ -122,10 +122,9 @@ color: #ffe626 !important;
 
 /* Set logo image */
 .site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
-	width: auto;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	height: 63px;
 	}
 
 /* Header icons container */
@@ -338,6 +337,7 @@ p.site-description {
 
 .widget_nav_menu ul li{
 	padding-left: 0;
+	margin-bottom: 0;
 }
 
 .widget_nav_menu ul li a{
@@ -347,6 +347,7 @@ p.site-description {
 .widget .widget-title, .widget .widgettitle {
 	border-bottom: none;
 	font-weight: 500;
+	margin-bottom: 0;
 }
 
 .widget .widget-product-subtitle{
@@ -361,12 +362,151 @@ p.site-description {
 	text-decoration: none;
 }
 
+/* Social Icons */
+.site-footer .social-media-menu {
+	display: flex;
+	align-items: center;
+}
+.site-footer .social-media-menu .social-media-title{
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.site-footer .social-media-menu a{
+	font-size: 40px;
+}
+.site-footer .social-media-menu .facebook::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f082";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
+.site-footer .social-media-menu .instagram::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f16d";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
+.site-footer .social-media-menu .twitter::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f099";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
+.site-footer .social-media-menu .youtube::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f167";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
+.site-footer .social-media-menu .google::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f0d5";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
+.site-footer .social-media-menu .linkedin::after{ 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:400;
+	line-height:1;
+	font-family:"Font Awesome\ 5 Brands";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;
+	content:"\f0e1";
+	height:1em;
+	line-height:1.618;
+	padding-left: 10px;
+	float: none;
+}
+
 
 /* DEV ONLY */
 .nav-menu .current_page_item a{
 	background-color:#ffe626;
 	border-radius:0px;
 	color:#df2226;
+}
+
+/*Yellow highlight for Featured Items in menu 2020/12/19 RD */
+.menu.nav-menu .menu-item-68 a, .menu.nav-menu .menu-item-354 a {
+    background-color: #ffe626;
+    border-radius: 0px;
+    color: #df2226 !important;
+}
+
+/* Force background color in Featured items to white */
+.storefront-primary-navigation .products .product a {
+	background-color: #fff !important;
 }
 
 @media screen and (min-width: 768px){
@@ -379,6 +519,10 @@ p.site-description {
 
 	.footer-widgets {
 		border-bottom: 0;
+	}
+
+	.storefront-breadcrumb{
+		padding: 2.41575em 0;
 	}
 }
 
@@ -400,15 +544,18 @@ p.site-description {
 	}
 
 	.site-branding{
-		width: 70% !important;
+		width: 50% !important;
 	}
 
 	.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
 		margin-left: 0;
+		height: auto !important;
+		width: 100% !important;
+		max-width: 8.5em;
 	}
 
 	button.menu-toggle {
-		margin-top: 15px;
+		margin-top: 2%;
 	}
 	
 	.header-icons-container {

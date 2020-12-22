@@ -34,5 +34,6 @@ function micos_hooks() {
 
 	// Add footer socials widget
 	add_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
+	add_action( 'storefront_footer', 'footer_social_icons', 11 );
 
 }

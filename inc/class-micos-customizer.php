@@ -51,6 +51,8 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 		public function customizer_css() {
 			$header_link_color = get_theme_mod( 'storefront_header_link_color' );
 			$tagline_font_size = get_theme_mod('tagline_font_size');
+			$header_logo_size = get_theme_mod('header_logo_size');
+			$social_media_color = get_theme_mod('social_media_color');
 
             $style = '
             .site-header-cart, .site-header-cart > li > a {
@@ -74,6 +76,15 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 			}
 			p.site-description{
 				font-size: ' . $tagline_font_size . 'px !important;
+			}
+			.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+				width: ' . $header_logo_size . 'em;
+			}
+			.site-footer .social-media-menu{
+				color: ' . $social_media_color . ';
+			}
+			.site-footer .social-media-menu a{
+				color: ' . $social_media_color . ' !important;
 			}
 			';
 

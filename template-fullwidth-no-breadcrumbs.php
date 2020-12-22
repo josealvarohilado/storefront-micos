@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<!-- Remove breadcrumbs -->
-	<style>.storefront-breadcrumb {display: none;}</style>
+	<style>.storefront-breadcrumb {display: none;} .entry-header h1.entry-title {text-align:center;}</style>
 
 	<div id="primary" class="content-area" style="margin-top: 6em">
 		<main id="main" class="site-main" role="main">
