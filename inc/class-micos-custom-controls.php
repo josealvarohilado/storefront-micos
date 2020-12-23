@@ -88,7 +88,7 @@ function theme_footer_customizer($wp_customize){
     $wp_customize->add_setting(
         'social_media_color',
         array(
-            'default'           => __('##dd3333', 'micos-footer-social-media'),
+            'default'           => __('#dd3333', 'micos-footer-social-media'),
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -108,4 +108,25 @@ function theme_footer_customizer($wp_customize){
 
 }
 add_action('customize_register','theme_footer_customizer');
+
+function theme_typography_customizer($wp_customize){
+    $wp_customize->add_setting('sub_heading_color',array(
+        'default'           => __('#000000', 'micos-typograpy-control'),
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'sub_heading_color',
+            array(
+                'label'    => __( 'Sub Heading Color', 'micos-typograpy-control' ),
+                'section'  => 'storefront_typography',
+                'settings' => 'sub_heading_color',
+                'priority' => 21,
+            )
+        )
+    );
+}
+add_action('customize_register','theme_typography_customizer');
 ?>

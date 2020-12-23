@@ -510,44 +510,24 @@ p.site-description {
 }
 
 /* Contact Us Form*/
-.contact-us-form .wpforms-head-container .wpforms-title {
-	all: unset;
-	all: initial;
-  }
-
-.phone-enquiries-container .phone-enquiries-header-container h2 {
-	all: unset;
-	all: initial;
+.phone-enquiries-container .phone-enquiries-header-container h2, .contact-us-form .wpforms-head-container .wpforms-title {
+	line-height: initial;
+	margin: initial;
 }
 
-.phone-enquiries-container .phone-enquiries-header-container h2 {
-	font-family: inherit;
-	color: inherit;
-	font-size: 2em;
-	font-weight: 300;
-}
-
-.contact-us-form .wpforms-head-container .wpforms-title {
-	font-size: 2em !important;
+.phone-enquiries-container .phone-enquiries-header-container h2, .contact-us-form .wpforms-head-container .wpforms-title{
 	font-weight: 300 !important;
-	font-family: inherit;
-	color: inherit !important;
+	font-size: 2em !important;
+	margin: 0 0 10px 0 !important;
 }
 
 .contact-us-form .wpforms-field-container{
 	width: 70% !important;
 }
 
-.contact-us-form .wpforms-head-container {
-	border-bottom: 5px solid green!important;
-	margin-bottom: 30px !important
-}
-
 .contact-us-form .wpforms-submit-container .contact-us-send {
     border-radius: 30px !important;
     padding: 10px 40px !important;
-    background-color: green !important;
-    color: white !important;
 }
 
 .contact-us-message textarea{
@@ -555,9 +535,9 @@ p.site-description {
 }
 
 /* Phone enquiries section */
-.phone-enquiries-container .phone-enquiries-header-container {
-    border-bottom: 5px solid green;
-    margin-bottom: 20px;
+.phone-enquiries-container .phone-enquiries-header-container, .contact-us-form .wpforms-head-container  {
+	border-bottom: 5px solid !important;
+    margin-bottom: 20px !important;
 }
 
 .phone-enquiries-container .service-hours-table td {
@@ -578,8 +558,8 @@ p.site-description {
 	margin: 0 0 10px 0 !important;
 }
 
-@media screen and (max-width: 450px){
-	.contact-us-form .wpforms-field-container{
+@media screen and (max-width: 410px){
+	.phone-enquiries-container .wp-block-table table {
 		width: 100% !important;
 	}
 }
@@ -640,6 +620,10 @@ p.site-description {
 
 	.phone-enquiries-container .wp-block-table table {
 		width: 100%;
+	}
+
+	.site-footer .social-media-menu{
+		justify-content: center;
 	}
 }
 
