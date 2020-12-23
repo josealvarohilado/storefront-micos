@@ -597,6 +597,7 @@ p.site-description {
 
 	.storefront-primary-navigation, .main-navigation ul.menu ul.sub-menu, .main-navigation ul li a {
 		background-color:#ffffff;
+		color: inherit;
 	}
 
 	.site-branding{

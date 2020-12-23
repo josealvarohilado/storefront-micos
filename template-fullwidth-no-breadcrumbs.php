@@ -12,7 +12,7 @@ get_header(); ?>
 	<!-- Remove breadcrumbs -->
 	<style>.storefront-breadcrumb {display: none;}}</style>
 
-	<div id="primary" class="content-area" style="margin-top: 6em">
+	<div id="primary" class="content-area" style="margin-top: 3em">
 		<main id="main" class="site-main" role="main">
 
 			<?php
