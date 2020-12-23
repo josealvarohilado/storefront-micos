@@ -136,6 +136,5 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 			</div> <!-- .footer-credits -->
 		</div><!-- .site-info -->
 		<?php
-		echo get_theme_mod('sub_heading_color') . 'test';
 	}
 }
