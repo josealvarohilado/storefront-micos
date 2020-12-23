@@ -46,6 +46,44 @@ function theme_header_customizer ($wp_customize) {
         ),
         'priority' => 8,
       ) );
+
+    $wp_customize->add_setting('icons_vertical_pos',array(
+        'default' =>10
+    ));
+
+    $wp_customize->add_control( 'icons_vertical_pos', array(
+        'type' => 'range',
+        'section' => 'title_tagline',
+        'label' => __( 'Icons vertical position' ),
+        'description' => __( 'Slide to change move icons vertical position' ),
+        'input_attrs' => array(
+          'min' => 1,
+          'max' => 60,
+          'step' => 2,
+        ),
+        'priority' => 9,
+      ) );
+      
+    $wp_customize->add_setting(
+        'header_link_hover_color',
+        array(
+            'default'           => __('#dd3333', 'micos-header-link-hover'),
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'header_link_hover_color',
+            array(
+                'label'    => __( 'Link Hover Color', 'micos-header-link-hover' ),
+                'section'  => 'header_image',
+                'settings' => 'header_link_hover_color',
+                'priority' => 50,
+            )
+        )
+    );
 };
 
 add_action('customize_register','theme_header_customizer');

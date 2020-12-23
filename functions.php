@@ -27,4 +27,12 @@ function footer_credits_menu_menu() {
     'social-media-menu' => __('Social Media Links', 'micos-theme-menus')
   ));
 }
+
+// add_filter( 'body_class', 'custom_class' );
+// function custom_class( $classes ) {
+//     if ( is_page_template( 'template-fullwidth-centered-heading.php' ) ) {
+//         $classes[] = 'fullwidth-center-heading';
+//     }
+//     return $classes;
+// }
 ?>

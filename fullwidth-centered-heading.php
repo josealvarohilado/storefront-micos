@@ -1,22 +1,15 @@
 <?php
 /**
- * The template for displaying full width pages with no breadcrumbs.
+ * The template for displaying full width pages.
  *
- * Template Name: Full width (no breadcrumbs and header)
+ * Template Name: Full width (centered heading)
  *
  * @package storefront
  */
 
 get_header(); ?>
 
-	<!-- Remove breadcrumbs and header space -->
-	<style>.storefront-breadcrumb {display: none;}
-	.hentry.type-page .entry-header{
-		display:none;
-	}
-	</style>
-
-	<div id="primary" class="content-area" style="margin-top: 0">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php

@@ -27,6 +27,7 @@ class micos_category_widget extends WP_Widget {
         'taxonomy' => 'product_cat',
         'orderby'  => 'name',
         'order'    => 'ASC',
+        'parent'   => 0,
         'exclude'  => $excluded_cat
      );
     $product_list = get_categories($products);

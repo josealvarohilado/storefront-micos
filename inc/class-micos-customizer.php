@@ -57,11 +57,13 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 			$sub_heading_color = get_theme_mod('sub_heading_color');
 			$button_color = get_theme_mod('storefront_button_background_color');
 			$button_text_color = get_theme_mod('storefront_button_text_color');
+			$icons_vertical_pos = get_theme_mod('icons_vertical_pos');
+			$header_link_hover_color = get_theme_mod('header_link_hover_color');
 
             $style = '
             .site-header-cart, .site-header-cart > li > a {
                 color: ' . $header_link_color . ' !important;
-            }
+			}
             .site-header-cart:focus, .site-header-cart:focus > li > a {
                 color: ' . $header_link_color . ' !important;
             }
@@ -72,10 +74,10 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
             a.cart-contents:hover  {
 				color: ' . $header_link_color . ' !important;
 			}
-			.site-header .site-search .widget_product_search form label:before {
+			.site-header .site-search .widget_product_search form label {
 				color: ' . $header_link_color . ' !important;
 			}
-			.site-header .header-icons-container .my-account:after {
+			.site-header .header-icons-container .my-account {
 				color: ' . $header_link_color . ' !important;
 			}
 			p.site-description{
@@ -100,6 +102,18 @@ if ( ! class_exists( 'Micos_Customizer' ) ) {
 			.contact-us-form .wpforms-head-container, .phone-enquiries-container .phone-enquiries-header-container {
 				border-bottom-color: ' . $button_color . ' !important;
 				filter:brightness(1.3);
+			}
+			.header-icons-container {
+				top: ' . $icons_vertical_pos . '%;
+			}
+			.site-header-cart, .site-header-cart > li > a:hover {
+                color: ' . $header_link_hover_color . ' !important;
+			}
+			.site-header .header-icons-container .my-account:hover {
+				color: ' . $header_link_hover_color . ' !important;
+			}
+			.site-header .site-search .widget_product_search form label:hover {
+				color: ' . $header_link_hover_color . ' !important;
 			}
 			';
 

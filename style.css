@@ -20,6 +20,14 @@ Dark shade - #5c4f59
 
 */
 
+/* Page template for centered heading */
+.page-template-fullwidth-centered-heading-php .content-area{
+	width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* Change primary menu background color*/
 .storefront-primary-navigation, .main-navigation ul.menu ul.sub-menu, .main-navigation ul li a {
 background-color:#df2226;
@@ -131,8 +139,12 @@ color: #ffe626 !important;
 .header-icons-container {
 	float: right; 
 	position: absolute;
-	top: 2em;
 	right: 3em;
+}
+
+.page-template-fullwidth-centered-heading-php .content-area .entry-title{
+	text-align: center;
+	padding-bottom: 1em;
 }
 
 /* Makes site-header-cart smaller to make room for search */
@@ -344,14 +356,15 @@ p.site-description {
 	text-decoration: none;
 }
 
-.widget .widget-title, .widget .widgettitle {
+.footer-widgets .widget .widget-title, .widget .widgettitle {
 	border-bottom: none;
 	font-weight: 500;
 	margin-bottom: 0;
+	font-size: 1.3em;
 }
 
-.widget .widget-product-subtitle{
-	font-size: 18px;
+.footer-widgets .widget a, .footer-widgets .widget .widget-product-subtitle {
+	font-size: 0.9em;
 }
 
 .footer-credits {
@@ -489,14 +502,6 @@ p.site-description {
 	float: none;
 }
 
-
-/* DEV ONLY */
-.nav-menu .current_page_item a{
-	background-color:#ffe626;
-	border-radius:0px;
-	color:#df2226;
-}
-
 /*Yellow highlight for Featured Items in menu 2020/12/19 RD */
 .menu.nav-menu .menu-item-68 a, .menu.nav-menu .menu-item-354 a {
     background-color: #ffe626;
@@ -567,13 +572,14 @@ p.site-description {
 @media screen and (min-width: 768px){
 	/* Masthead */
 	#masthead.site-header {
-		height: 115px !important;
+		/* height: 115px !important; */
 		margin-bottom:0em !important;
 		padding-bottom: 0;
 	}
 
 	.footer-widgets {
 		border-bottom: 0;
+		padding: 0;
 	}
 
 	.storefront-breadcrumb{
@@ -585,13 +591,13 @@ p.site-description {
 /* Mobile CSS */
 @media only screen and (max-width: 767px) {
 	#masthead.site-header {
-	height: 90px!important;
+/* 	height: 90px!important; */
 	margin-bottom:0px;
 	}
 
 	/* Mobile CSS for Header area */ 
 	.site-header {
-	padding-top:0.5em;
+	padding:0;
 	background-color:#ffffff;
 	}
 
@@ -607,12 +613,13 @@ p.site-description {
 	.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
 		margin-left: 0;
 		height: auto !important;
-		width: 100% !important;
+		width: 60% !important;
 		max-width: 8.5em;
+		margin-top: 1em;
 	}
 
 	button.menu-toggle {
-		margin-top: 2%;
+		margin-top: 13px;
 	}
 	
 	.header-icons-container {
